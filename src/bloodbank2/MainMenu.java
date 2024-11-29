@@ -54,7 +54,35 @@ public class MainMenu extends Application {
         historyBtn.setPrefHeight(43);
         historyBtn.setStyle("-fx-background-radius: 10px;");
         historyBtn.setOnAction(e -> historyBtn(primaryStage));  
+        
+//        ImageView imageView = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
+//        imageView.setFitHeight(333.0);
+//        imageView.setFitWidth(419.0);
+//        imageView.setLayoutX(-3.0);
+//        imageView.setLayoutY(301.0);
+//        imageView.setPickOnBounds(true);
+//        imageView.setPreserveRatio(true);
 
+//        ImageView imageView2 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
+//        imageView2.setFitHeight(217..0);
+//        imageView2.setFitWidth(426.0);
+//        imageView2.setLayoutX(-13.0);
+//        imageView2.setPickOnBounds(true);
+//        imageView2.setPreserveRatio(true);
+
+//        ImageView imageView3 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
+//        imageView3.setFitHeight(207.0);
+//        imageView3.setFitWidth(154.0);
+//        imageView3.setLayoutX(29.0);
+//        imageView3.setLayoutY(59.0);
+//        imageView3.setPickOnBounds(true);
+//        imageView.setPreserveRatio(true);
+
+//        ImageView imageView4 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
+//        imageView4.setFitHeight(200.0);
+//        imageView4.setFitWidth(200.0);
+//        imageView3.setLayoutX(100.0);
+//        imageView3.setLayoutY(246.0);
 
         pane.getChildren().addAll(frame, bookAppointmentBtn, backButton, historyBtn);
 
@@ -69,27 +97,27 @@ public class MainMenu extends Application {
     
     
         public void bookAppointmentBtn(Stage primaryStage) {
-             AppointmentBooking AB = new AppointmentBooking(); // إنشاء كائن جديد من MainMenu  
+             AppointmentBooking AB = new AppointmentBooking(); 
             try {  
-                AB.start(primaryStage); // استدعاء دالة start الخاصة بها  
+                AB.start(primaryStage); 
             } catch (Exception e) {  
                 e.printStackTrace();  
         } 
             
         }
        public void historyBtn(Stage primaryStage) {
-                 History history = new History(); // إنشاء كائن جديد من MainMenu  
+                 History history = new History(); 
             try {  
-                history.start(primaryStage); // استدعاء دالة start الخاصة بها  
+                history.start(primaryStage); 
             } catch (Exception e) {  
                 e.printStackTrace();  
         }
         }  
           public void backButton(Stage primaryStage) {
             
-               BloodBank2 bloodbank = new BloodBank2(); // إنشاء كائن جديد من MainMenu  
+               BloodBank2 bloodbank = new BloodBank2(); 
             try {  
-                bloodbank.start(primaryStage); // استدعاء دالة start الخاصة بها  
+                bloodbank.start(primaryStage); 
             } catch (Exception e) {  
                 e.printStackTrace();  
             }  
