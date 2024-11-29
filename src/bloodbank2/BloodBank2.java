@@ -1,6 +1,7 @@
 
 package bloodbank2;  
 
+import java.util.ArrayList;
 import javafx.application.Application;  
 import javafx.scene.Scene;  
 import javafx.scene.control.Button;  
@@ -27,13 +28,11 @@ public class BloodBank2 extends Application {
         Pane pane = new Pane();  
         root.getChildren().add(pane);  
 
-        // الخلفية  
         ImageView background = new ImageView(new Image("file:../imige/Black BackGround.jpg"));  
         background.setFitWidth(400);  
         background.setFitHeight(552);  
         pane.getChildren().add(background);  
 
-        // أيقونة المستخدم  
         ImageView userIcon = new ImageView(new Image("file:../imige/user.png"));  
         userIcon.setFitWidth(200);  
         userIcon.setFitHeight(104);  
@@ -41,14 +40,12 @@ public class BloodBank2 extends Application {
         userIcon.setLayoutY(67);  
         pane.getChildren().add(userIcon);  
 
-        // حقل كلمة المرور  
         passwordField = new PasswordField();  
         passwordField.setLayoutX(71);  
         passwordField.setLayoutY(309);  
         passwordField.setPrefWidth(246);  
         pane.getChildren().add(passwordField);  
 
-        // تسمية كلمة المرور  
         Label passwordLabel = new Label("Password");  
         passwordLabel.setLayoutX(153);  
         passwordLabel.setLayoutY(271);  
@@ -56,14 +53,12 @@ public class BloodBank2 extends Application {
         passwordLabel.setFont(new Font("Bodoni MT Bold", 18));  
         pane.getChildren().add(passwordLabel);  
 
-        // حقل اسم المستخدم  
         usernameField = new TextField();  
         usernameField.setLayoutX(70);  
         usernameField.setLayoutY(229);  
         usernameField.setPrefWidth(246);  
         pane.getChildren().add(usernameField);  
 
-        // تسمية اسم المستخدم  
         Label usernameLabel = new Label("User");  
         usernameLabel.setLayoutX(174);  
         usernameLabel.setLayoutY(187);  
@@ -71,7 +66,6 @@ public class BloodBank2 extends Application {
         usernameLabel.setFont(new Font("Bodoni MT Bold", 18));  
         pane.getChildren().add(usernameLabel);  
 
-        // زر تسجيل الدخول  
         Button signInButton = new Button("Sign in");  
         signInButton.setLayoutX(124);  
         signInButton.setLayoutY(403);  
@@ -94,12 +88,16 @@ public class BloodBank2 extends Application {
         signUpButton.setLayoutY(461);  
         signUpButton.setPrefWidth(139);  
         signUpButton.setPrefHeight(36);  
-        signUpButton.setFont(new Font("Bell MT", 12));  
-        pane.getChildren().add(signUpButton);  
+        signUpButton.setFont(new Font("Bell MT", 12));
+        signUpButton.setOnAction(e -> signUpButton(primaryStage));  
 
-        // إنشاء Scene تسجيل الدخول  
+        pane.getChildren().add(signUpButton);  
+        
+
+        
         loginScene = new Scene(root, 398, 543);  
         primaryStage.setScene(loginScene);  
+        primaryStage.setTitle("BloodBank");
         primaryStage.show();  
     }  
 
@@ -108,20 +106,94 @@ public class BloodBank2 extends Application {
         String username = usernameField.getText();  
         String password = passwordField.getText();  
 
-        if (username.equals("aaa") && password.equals("bbb")) {  
-            // الانتقال إلى MainMenu  
-            MainMenu mainMenu = new MainMenu(); // إنشاء كائن جديد من MainMenu  
+     UserDatabase userDB = new UserDatabase();
+    ArrayList<User> users = userDB.getUsers();
+
+    boolean loggedIn = false;
+
+    for (User user : users) {
+        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            loggedIn = true;
+            break;
+        }
+    }
+        
+        
+        
+        
+        if(loggedIn){
+        
+        if (username.equals("yazeed") && password.equals("123")) {  
+            
+            MainMenu mainMenu = new MainMenu();  
             try {  
-                mainMenu.start(primaryStage); // استدعاء دالة start الخاصة بها  
+                mainMenu.start(primaryStage); 
             } catch (Exception e) {  
                 e.printStackTrace();  
             }  
-        } else {  
-            label.setText("Invalid credentials");   
+        }
+        
+        else if(username.equals("hospital") && password.equals("123")){
+            
+              Hospital hospital = new Hospital(); 
+            try {  
+                hospital.start(primaryStage); 
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }
+            
+        }
+       
+        else if(username.equals("manager") && password.equals("123")){
+              Manager manager = new Manager(); 
+            try {  
+                manager.start(primaryStage); 
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }
+        }
+        else if(username.equals("staff") && password.equals("123")){
+              Staff staff = new Staff(); 
+            try {  
+                staff.start(primaryStage); 
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }
+        }
+        else{
+            
+                MainMenu mainMenu = new MainMenu();  
+            try {  
+                mainMenu.start(primaryStage); 
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            } 
+            
+        }
+
+        }
+        
+        
+        else {  
+            label.setText("Username or password is wrong!");   
         }  
     }  
 
+        public void signUpButton(Stage primaryStage) {  
+            
+              CreeteAccount creeteAccount = new CreeteAccount();  
+            try {  
+                creeteAccount.start(primaryStage);
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            } 
+            
+        }
+
+    
+    
     public static void main(String[] args) {  
         launch(args);  
     }  
 }  
+

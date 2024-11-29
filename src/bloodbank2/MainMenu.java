@@ -74,10 +74,16 @@ public class MainMenu extends Application {
                 AB.start(primaryStage); // استدعاء دالة start الخاصة بها  
             } catch (Exception e) {  
                 e.printStackTrace();  
-        }  
+        } 
+            
         }
        public void historyBtn(Stage primaryStage) {
-            
+                 History history = new History(); // إنشاء كائن جديد من MainMenu  
+            try {  
+                history.start(primaryStage); // استدعاء دالة start الخاصة بها  
+            } catch (Exception e) {  
+                e.printStackTrace();  
+        }
         }  
           public void backButton(Stage primaryStage) {
             
