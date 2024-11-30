@@ -26,17 +26,18 @@ public class BloodBank2 extends Application {
     public void start(Stage primaryStage) throws Exception {  
         AnchorPane root = new AnchorPane();  
         Pane pane = new Pane();  
-        root.getChildren().add(pane);  
+        root.getChildren().add(pane);
 
-        ImageView background = new ImageView(new Image("file:../imige/Black BackGround.jpg"));  
+
+        ImageView background = new ImageView(new Image("Image/BlackBackGround.jpeg"));  
         background.setFitWidth(400);  
         background.setFitHeight(552);  
         pane.getChildren().add(background);  
 
-        ImageView userIcon = new ImageView(new Image("file:../imige/user.png"));  
-        userIcon.setFitWidth(200);  
+        ImageView userIcon = new ImageView(new Image("Image/user.png"));  
+        userIcon.setFitWidth(150);  
         userIcon.setFitHeight(104);  
-        userIcon.setLayoutX(141);  
+        userIcon.setLayoutX(120);  
         userIcon.setLayoutY(67);  
         pane.getChildren().add(userIcon);  
 

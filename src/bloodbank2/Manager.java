@@ -37,10 +37,10 @@ public class Manager extends Application {
         aproveButton.setOnAction(e -> aproveButton(primaryStage));  
 
 
-//        ImageView imageView = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
-//        imageView.setFitHeight(280.0);
-//        imageView.setFitWidth(398.0);
-//        imageView.setPreserveRatio(true);
+        ImageView imageView = new ImageView(new Image("Image/picture-fram-260nw-242360284.png"));
+        imageView.setFitHeight(280.0);
+        imageView.setFitWidth(398.0);
+        imageView.setPreserveRatio(true);
 
         Button rejectButton = new Button("Reject");
         rejectButton.setLayoutX(96.0);
@@ -77,7 +77,7 @@ public class Manager extends Application {
         quantityLabel.setLayoutY(26.0);
         quantityLabel.setFont(Font.font("System Bold", 11.0));
 
-        root.getChildren().addAll(aproveButton, rejectButton, backButton, newRequestLabel, bloodTypeLabel, quantityLabel);
+        root.getChildren().addAll(imageView ,aproveButton, rejectButton, backButton, newRequestLabel, bloodTypeLabel, quantityLabel );
 
         Scene scene = new Scene(root, 398, 543);
         primaryStage.setTitle("Blood Request");

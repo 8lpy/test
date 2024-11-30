@@ -34,7 +34,7 @@ public class Hospital extends Application {
         pane.setStyle("-fx-background-radius: 40px; -fx-background-color: #ff4d94;");
         pane.setEffect(new DropShadow());
 
-        Button newRecostButton = new Button("New recost");
+        Button newRecostButton = new Button("New request");
         newRecostButton.setLayoutX(112.0);
         newRecostButton.setLayoutY(404.0);
         newRecostButton.setPrefHeight(25.0);
@@ -68,13 +68,12 @@ public class Hospital extends Application {
         backButton.setFont(Font.font("System Bold", 15.0));
         backButton.setOnAction(e -> backButton(primaryStage));  
 
-//
-//        ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("../image/hos.png")));
-//        imageView.setFitHeight(284.0);
-//        imageView.setFitWidth(398.0);
-//        imageView.setPreserveRatio(true);
+        ImageView imageView = new ImageView(new Image("Image/hospitalimige.png"));  
+        imageView.setFitHeight(284.0);
+        imageView.setFitWidth(398.0);
+        imageView.setPreserveRatio(true);
 
-        root.getChildren().addAll(pane, newRecostButton, bloodComboBox, volumeComboBox, backButton);
+        root.getChildren().addAll(pane, newRecostButton, bloodComboBox, volumeComboBox, backButton , imageView);
 
         Scene scene = new Scene(root, 398, 543);
         primaryStage.setTitle("Hospital Application");

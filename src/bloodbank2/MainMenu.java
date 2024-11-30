@@ -55,36 +55,45 @@ public class MainMenu extends Application {
         historyBtn.setStyle("-fx-background-radius: 10px;");
         historyBtn.setOnAction(e -> historyBtn(primaryStage));  
         
-//        ImageView imageView = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
-//        imageView.setFitHeight(333.0);
-//        imageView.setFitWidth(419.0);
-//        imageView.setLayoutX(-3.0);
-//        imageView.setLayoutY(301.0);
-//        imageView.setPickOnBounds(true);
-//        imageView.setPreserveRatio(true);
+        
 
-//        ImageView imageView2 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
-//        imageView2.setFitHeight(217..0);
-//        imageView2.setFitWidth(426.0);
-//        imageView2.setLayoutX(-13.0);
-//        imageView2.setPickOnBounds(true);
-//        imageView2.setPreserveRatio(true);
+        
+        
+        ImageView imageView = new ImageView(new Image("Image/background-hospitalclass.jpg"));
+        imageView.setFitHeight(333.0);
+        imageView.setFitWidth(419.0);
+        imageView.setLayoutX(-100.0);
+        imageView.setLayoutY(55.0);
+        imageView.setPickOnBounds(true);
+        imageView.setPreserveRatio(true);
 
-//        ImageView imageView3 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
-//        imageView3.setFitHeight(207.0);
-//        imageView3.setFitWidth(154.0);
-//        imageView3.setLayoutX(29.0);
-//        imageView3.setLayoutY(59.0);
-//        imageView3.setPickOnBounds(true);
-//        imageView.setPreserveRatio(true);
+        
+        
+        
+        
+        ImageView imageView2 = new ImageView(new Image("Image/fram.jpg"));
+        imageView2.setFitHeight(217.0);
+        imageView2.setFitWidth(426.0);
+        imageView2.setLayoutX(25.0);
+        imageView2.setLayoutY(60.0);
+        imageView2.setPickOnBounds(true);
+        imageView2.setPreserveRatio(true);
 
-//        ImageView imageView4 = new ImageView(new Image("file:imige/picture-fram-260nw-242360284.png"));
-//        imageView4.setFitHeight(200.0);
-//        imageView4.setFitWidth(200.0);
-//        imageView3.setLayoutX(100.0);
-//        imageView3.setLayoutY(246.0);
+        ImageView imageView3 = new ImageView(new Image("Image/BloodHospital.jpg"));
+        imageView3.setFitHeight(320.0);
+        imageView3.setFitWidth(400);
+        imageView3.setLayoutX(-100.0);
+        imageView3.setLayoutY(-300.0);
+        imageView3.setPickOnBounds(true);
+       
 
-        pane.getChildren().addAll(frame, bookAppointmentBtn, backButton, historyBtn);
+        ImageView imageView4 = new ImageView(new Image("Image/Blood-bank-and-Blood-donation-center-background-png-1-min.png"));
+        imageView4.setFitHeight(100.0);
+        imageView4.setFitWidth(100.0);
+        imageView4.setLayoutX(200.0);
+        imageView4.setLayoutY(-50.0);
+
+        pane.getChildren().addAll(imageView, imageView3 ,imageView2 ,imageView4 ,frame, bookAppointmentBtn, backButton, historyBtn );
 
         root.getChildren().addAll(pane);
 
